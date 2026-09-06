@@ -1,0 +1,36 @@
+===== start method: fork =====
+python 3.13.5, start method: fork
+Scenario A (control): victim killed while NOT in get()
+  [PASS] later reader drains the queue normally -- got 3/3
+Scenario B (incident): victim SIGKILLed while blocked in Queue.get()
+  [PASS] victim is dead
+  [PASS] queue reports items present after the kill -- qsize=5
+  [PASS] fresh reader (new process) is locked out despite items -- got 0, expected 0; Empty on every timed get
+  [PASS] second fresh reader equally locked out (shared semaphore, not local state) -- got 0
+  [PASS] parent process locked out too
+ALL CHECKS PASS (6/6)
+
+===== start method: forkserver =====
+python 3.13.5, start method: forkserver
+Scenario A (control): victim killed while NOT in get()
+  [PASS] later reader drains the queue normally -- got 3/3
+Scenario B (incident): victim SIGKILLed while blocked in Queue.get()
+  [PASS] victim is dead
+  [PASS] queue reports items present after the kill -- qsize=5
+  [PASS] fresh reader (new process) is locked out despite items -- got 0, expected 0; Empty on every timed get
+  [PASS] second fresh reader equally locked out (shared semaphore, not local state) -- got 0
+  [PASS] parent process locked out too
+ALL CHECKS PASS (6/6)
+
+===== start method: spawn =====
+python 3.13.5, start method: spawn
+Scenario A (control): victim killed while NOT in get()
+  [PASS] later reader drains the queue normally -- got 3/3
+Scenario B (incident): victim SIGKILLed while blocked in Queue.get()
+  [PASS] victim is dead
+  [PASS] queue reports items present after the kill -- qsize=5
+  [PASS] fresh reader (new process) is locked out despite items -- got 0, expected 0; Empty on every timed get
+  [PASS] second fresh reader equally locked out (shared semaphore, not local state) -- got 0
+  [PASS] parent process locked out too
+ALL CHECKS PASS (6/6)
+
