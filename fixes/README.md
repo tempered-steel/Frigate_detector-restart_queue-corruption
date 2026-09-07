@@ -19,8 +19,8 @@ that enter through long plugin calls. Any other path to the force-kill
 fix is described in EVIDENCE-INCIDENT-3.md §7.
 
 The plugin patch's design rationale and its regression harness live with the
-plugin-layer investigation in the sibling repo (which currently carries the
-pre-v1.3 generation of the patch; a v1.3 refresh there is pending):
+plugin-layer investigation in the sibling repo (refreshed to v1.3 on
+2026-09-07, including the 18-check harness and its banked run):
 https://github.com/tempered-steel/Frigate_zmq_silent-detection_failure
 
 Attribution: `zmq_ipc.py` is a derivative of
